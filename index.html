@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <button class="logo" id="home-logo" type="button">Movie Guide</button>
+  <form id="search-form" class="search-bar" autocomplete="off">
+    <input id="search-input" type="text" placeholder="Search for movies..." aria-label="Search movies">
+    <button type="submit">Search</button>
+    <div class="watchlist-badge" id="watchlist-badge" title="Open watchlist">
+      👁️<span id="watchlist-count">0</span>
+    </div>
+  </form>
+</header>
+
+<main>
+  <aside id="watchlist-panel" class="watchlist-panel hidden">
+    <div class="watchlist-header">
+      <h3>Watchlist</h3>
+      <button id="close-watchlist" aria-label="Close watchlist">×</button>
+    </div>
+    <div id="watchlist-items" class="watchlist-items"></div>
+    <p id="watchlist-empty" class="meta"></p>
+  </aside>
+
+  <section id="results" class="grid" aria-live="polite">
+   
+
+  </section>
+
+
+  <section class="genre-tiles" aria-label="Browse by genre">
+    <h2>Browse by Genre</h2>
+
+    <div class="genre-grid" id="genre-grid">
+
+      <button class="genre-card" data-genre="Action"
+        data-poster="images/Action.jpg">
+        <span>Action</span>
+      </button>
+
+      <button class="genre-card" data-genre="Comedy"
+        data-poster="images/comedy.jpg">
+        <span>Comedy</span>
+      </button>
+
+      <button class="genre-card" data-genre="Drama"
+        data-poster="images/drama.jpg">
+        <span>Drama</span>
+      </button>
+
+      <button class="genre-card" data-genre="Romance"
+        data-poster="images/romance.jpg">
+        <span>Romance</span>
+      </button>
+
+      <button class="genre-card" data-genre="Horror"
+        data-poster="images/horror.jpg">
+        <span>Horror</span>
+      </button>
+
+      <button class="genre-card" data-genre="Sci-Fi"
+        data-poster="images/scifi.jpg">
+        <span>Sci-Fi</span>
+      </button>
+
+      <button class="genre-card" data-genre="Animation"
+        data-poster="images/animation.jpg">
+        <span>Animation</span>
+      </button>
+
+      <button class="genre-card" data-genre="Thriller"
+        data-poster="images/thriller.jpg">
+        <span>Thriller</span>
+      </button>
+
+      <button class="genre-card" data-genre="Fantasy"
+        data-poster="images/fantasy.jpg">
+        <span>Fantasy</span>
+      </button>
+
+      <button class="genre-card" data-genre="Crime"
+        data-poster="images/crime.jpg">
+        <span>Crime</span>
+      </button>
+
+      <button class="genre-card" data-genre="Adventure"
+        data-poster="images/adventure.jpg">
+        <span>Adventure</span>
+      </button>
+
+    </div>
+  </section>
+</main>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close details">&times;</button>
+    <div class="modal-body">
+      <img id="modal-poster" alt="Movie Poster">
+      <div class="modal-text">
+        <h2 id="modal-title"></h2>
+        <p id="modal-genre"></p>
+        <p id="modal-plot"></p>
+        <p id="modal-rating" class="rating"></p>
+        <button id="modal-watchlist-btn" class="modal-watchlist-btn">
+          Add to Watchlist
+        </button>
+
+        <div class="related">
+          <h3>Related Picks</h3>
+          <div id="related-status" class="meta"></div>
+          <div id="related-list" class="related-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
